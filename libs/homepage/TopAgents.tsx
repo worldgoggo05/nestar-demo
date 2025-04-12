@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import TopAgentsCard from "./TopAgentsCard";
 
-const TopAgents = ({ initialInput, ...props }: any) => {
+const TopAgents = ({ initialInput = [1, 2, 3, 4, 5], ...props }: any) => {
   const [topAgents, setTopAgents] = useState<number[]>(initialInput);
 
   return (
@@ -55,10 +55,6 @@ const TopAgents = ({ initialInput, ...props }: any) => {
       </Stack>
     </Stack>
   );
-};
-
-TopAgents.defaultProps = {
-  initialInput: [1, 2, 3, 4, 5],
 };
 
 export default TopAgents;

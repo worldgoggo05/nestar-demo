@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Stack } from "@mui/material";
 
 const Advertisement = () => {
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  if (!hasMounted) {
+    return null; // Or a placeholder/loading state
+  }
+
   return (
     <Stack className={"video-frame"}>
       <video
